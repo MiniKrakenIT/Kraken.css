@@ -1,0 +1,28 @@
+{
+  "name": "kraken.css",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
+    "@chromatic-com/storybook": "^1.5.0",
+    "@storybook/addon-essentials": "^8.1.5",
+    "@storybook/addon-interactions": "^8.1.5",
+    "@storybook/addon-links": "^8.1.5",
+    "@storybook/blocks": "^8.1.5",
+    "@storybook/html": "^8.1.5",
+    "@storybook/html-vite": "^8.1.5",
+    "@storybook/test": "^8.1.5",
+    "@types/bun": "latest",
+    "sass": "^1.77.4",
+    "storybook": "^8.1.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "biome": "biome format",
+    "build": "build css",
+    "storybook": "STORYBOOK_TELEMETRY_DEBUG=1 storybook dev -p 6006",
+    "build-storybook": "STORYBOOK_TELEMETRY_DEBUG=1 storybook build"
+  }
+}
