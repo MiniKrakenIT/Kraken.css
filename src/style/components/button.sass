@@ -1,0 +1,50 @@
+button
+  //color vars
+  --c: ''
+  //color rotate
+  --cr: var(--p)
+  //color darken
+  --cd: var(--p)
+
+  // component vars
+  //padding
+  --p: 8px 12px
+  //margin
+  --m: 5px
+  //border-radius
+  --br: 12px
+  //text color
+  --tc: #fff
+
+  border: 0
+  margin: var(--m)
+  border-radius: var(--br)
+  transition: all .25s ease
+  position: relative
+  user-select: none
+  z-index: 1
+  overflow: hidden
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 0
+  outline: none
+  font-size: .8rem
+  box-sizing: border-box
+
+  &:disabled,&[aria-disabled]
+    pointer-events: none
+    opacity: .35
+
+  &[aria-busy]
+    pointer-events: none
+    user-select: none
+
+  &:hover
+    background-color: #c00
+
+  &[aria-disabled]
+    background-color: #00f
+    color: #000
+    &:hover
+      background-color: #00c

@@ -1,22 +1,16 @@
-import type { StorybookConfig } from '@storybook/html-vite'
+import type { StorybookConfig } from "@storybook/svelte-vite";
 
 const config: StorybookConfig = {
-  stories: [
-    '../stories/**/*.mdx',
-    '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-  ],
+  stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|jsx|ts|tsx|svelte)"],
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@chromatic-com/storybook',
-    '@storybook/addon-interactions',
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@chromatic-com/storybook",
+    "@storybook/addon-interactions",
   ],
   framework: {
-    name: '@storybook/html-vite',
+    name: "@storybook/svelte-vite",
     options: {},
   },
-  core: {
-    disableTelemetry: true, // 👈 Disables telemetry
-  },
-}
-export default config
+};
+export default config;

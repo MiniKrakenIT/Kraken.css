@@ -251,5 +251,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
 *storybook.log
+
+build/

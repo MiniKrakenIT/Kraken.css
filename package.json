@@ -11,8 +11,12 @@
     "@storybook/blocks": "^8.1.5",
     "@storybook/html": "^8.1.5",
     "@storybook/html-vite": "^8.1.5",
+    "@storybook/svelte": "^8.1.5",
+    "@storybook/svelte-vite": "^8.1.5",
     "@storybook/test": "^8.1.5",
     "@types/bun": "latest",
+    "browserslist": "^4.23.0",
+    "ress": "^5.0.2",
     "sass": "^1.77.4",
     "storybook": "^8.1.5"
   },
@@ -22,7 +26,11 @@
   "scripts": {
     "biome": "biome format",
     "build": "build css",
-    "storybook": "STORYBOOK_TELEMETRY_DEBUG=1 storybook dev -p 6006",
-    "build-storybook": "STORYBOOK_TELEMETRY_DEBUG=1 storybook build"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "lightningcss": "^1.25.1",
+    "lightningcss-cli": "^1.25.1"
   }
 }

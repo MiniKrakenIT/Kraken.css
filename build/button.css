@@ -1,0 +1,42 @@
+button {
+  --c: "";
+  --cr: var(--p);
+  --cd: var(--p);
+  --p: 8px 12px;
+  --m: 5px;
+  --br: 12px;
+  --tc: #fff;
+  border: 0;
+  margin: var(--m);
+  border-radius: var(--br);
+  transition: all 0.25s ease;
+  position: relative;
+  user-select: none;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  outline: none;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+}
+button:disabled, button[aria-disabled] {
+  pointer-events: none;
+  opacity: 0.35;
+}
+button[aria-busy] {
+  pointer-events: none;
+  user-select: none;
+}
+button:hover {
+  background-color: #c00;
+}
+button[aria-disabled] {
+  background-color: #00f;
+  color: #000;
+}
+button[aria-disabled]:hover {
+  background-color: #00c;
+}
