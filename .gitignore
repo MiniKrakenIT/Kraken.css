@@ -253,4 +253,4 @@ Temporary Items
 
 *storybook.log
 
-build/
+./build/
