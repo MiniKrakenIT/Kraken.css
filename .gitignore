@@ -253,4 +253,6 @@ Temporary Items
 
 *storybook.log
 
-build
+### custom
+.storybook-static/
+build/
