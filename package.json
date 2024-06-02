@@ -14,8 +14,10 @@
     "@storybook/svelte": "^8.1.5",
     "@storybook/svelte-vite": "^8.1.5",
     "@storybook/test": "^8.1.5",
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "@types/bun": "latest",
     "browserslist": "^4.23.0",
+    "lightningcss": "^1.25.1",
     "ress": "^5.0.2",
     "sass": "^1.77.4",
     "storybook": "^8.1.5"
@@ -26,11 +28,7 @@
   "scripts": {
     "biome": "biome format",
     "build": "build css",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "dependencies": {
-    "lightningcss": "^1.25.1",
-    "lightningcss-cli": "^1.25.1"
+    "storybook": "storybook dev -p 6006 --no-open",
+    "storybook:build": "storybook build -o .storybook-static"
   }
 }

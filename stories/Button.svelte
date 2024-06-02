@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '../build/min/base.min.css';
+  import './button.css';
 
   /**
    * Is this the principal call to action on the page?
@@ -19,8 +19,6 @@
    */
   export let label: string = '';
 
-  export let disabled = false;
-
   $: mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
 
   $: style = backgroundColor ? `background-color: ${backgroundColor}` : '';
@@ -30,8 +28,6 @@
   type="button"
   class={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
   {style}
-  {disabled}
-  aria-disabled="{disabled}"
   on:click
 >
   {label}
