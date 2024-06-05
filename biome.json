@@ -1,5 +1,8 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+  "files": {
+    "ignore": ["node_modules/", "build/", ".storybook-static/", "./**/*.svelte"]
+  },
   "organizeImports": {
     "enabled": true
   },
@@ -20,13 +23,13 @@
       "bracketSameLine": true
     }
   },
-	"css": {
-		"formatter": {
-			"enabled": true,
-			"quoteStyle": "single"
-		}
-	},
-	"linter": {
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "quoteStyle": "single"
+    }
+  },
+  "linter": {
     "enabled": true,
     "rules": {
       "recommended": true

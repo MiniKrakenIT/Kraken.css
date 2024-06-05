@@ -1,24 +1,27 @@
 button
-  //color vars
-  --c: ''
-  //color rotate
-  --cr: var(--p)
-  //color darken
-  --cd: var(--p)
+  &[color="primary"]
+    --c: var(--fallback-pc, oklch(var(--pc)))
+    --cb: var(--fallback-p, oklch(var(--p)))
 
-  // component vars
+  &[color="secondary"]
+    --c: var(--fallback-sc, oklch(var(--sc)))
+    --cb: var(--fallback-s, oklch(var(--s)))
+
+  &[color="accent"]
+    --c: var(--fallback-ac, oklch(var(--ac)))
+    --cb: var(--fallback-a, oklch(var(--a)))
+
   //padding
-  --p: 8px 12px
+  --pa: 0.5rem 0.75rem
   //margin
-  --m: 5px
+  --ma: 0.3125rem
   //border-radius
-  --br: 12px
-  //text color
-  --tc: #fff
+  --bo: 0.75rem
 
   border: 0
-  margin: var(--m)
-  border-radius: var(--br)
+  margin: var(--ma)
+  padding: var(--pa)
+  border-radius: var(--bo)
   transition: all .25s ease
   position: relative
   user-select: none
@@ -27,24 +30,26 @@ button
   display: flex
   align-items: center
   justify-content: center
-  padding: 0
   outline: none
   font-size: .8rem
   box-sizing: border-box
+  color: var(--c)
+  background-color: var(--cb)
+  tap-highlight-color: transparent
 
   &:disabled,&[aria-disabled]
     pointer-events: none
     opacity: .35
 
-  &[aria-busy]
+  &:hover
+    box-shadow: 0 10px 20px -10px var(--cb)
+    transform: translateY(-3px)
+
+  &:active
+    box-shadow: 0 5px 10px -5px var(--cb)
+    transform: scale3d(.97, .97, .97)
+
+  &[aria-busy="true"]
+    cursor: wait
     pointer-events: none
     user-select: none
-
-  &:hover
-    background-color: #c00
-
-  &[aria-disabled]
-    background-color: #00f
-    color: #000
-    &:hover
-      background-color: #00c
