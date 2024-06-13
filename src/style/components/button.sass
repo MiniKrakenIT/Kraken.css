@@ -1,27 +1,8 @@
 button
-  &[color="primary"]
-    --c: var(--fallback-pc, oklch(var(--pc)))
-    --cb: var(--fallback-p, oklch(var(--p)))
-
-  &[color="secondary"]
-    --c: var(--fallback-sc, oklch(var(--sc)))
-    --cb: var(--fallback-s, oklch(var(--s)))
-
-  &[color="accent"]
-    --c: var(--fallback-ac, oklch(var(--ac)))
-    --cb: var(--fallback-a, oklch(var(--a)))
-
-  //padding
-  --pa: 0.5rem 0.75rem
-  //margin
-  --ma: 0.3125rem
-  //border-radius
-  --bo: 0.75rem
-
   border: 0
-  margin: var(--ma)
-  padding: var(--pa)
-  border-radius: var(--bo)
+  margin: var(--ma, 0.3125rem)
+  padding: var(--pa, 0.5rem 1rem)
+  border-radius: var(--br, 0.75rem)
   transition: all .25s ease
   position: relative
   user-select: none
@@ -31,15 +12,23 @@ button
   align-items: center
   justify-content: center
   outline: none
-  font-size: .8rem
+  font-size: var(--fs, .8rem)
   box-sizing: border-box
-  color: var(--c)
-  background-color: var(--cb)
-  tap-highlight-color: transparent
+  color: var(--c, var(--fallback-pc, oklch(var(--pc))))
+  background-color: var(--cb, var(--fallback-p, oklch(var(--p))))
+  -webkit-tap-highlight-color: transparent
 
-  &:disabled,&[aria-disabled]
-    pointer-events: none
-    opacity: .35
+  &:disabled
+    opacity: .6
+    cursor: not-allowed
+
+    &:hover
+      box-shadow: none
+      transform: none
+
+  &:focus-within
+    outline: var(--cb) solid .15rem
+    outline-offset: .15rem
 
   &:hover
     box-shadow: 0 10px 20px -10px var(--cb)
@@ -51,5 +40,43 @@ button
 
   &[aria-busy="true"]
     cursor: wait
-    pointer-events: none
-    user-select: none
+
+    & > span:first-child
+      position: absolute
+
+    & > span:last-child
+      filter: blur(2px)
+
+
+  &[block="true"]
+    display: block
+    width: 100%
+    text-align: center
+
+  &[size="sm"]
+    font-size: .7rem
+    --pa: 0.25rem 0.5rem
+    --ma: 0.15625rem
+    --bo: 0.375rem
+    --br: 0.75rem
+
+  &[size="md"]
+    font-size: .9rem
+    --pa: 0.7rem .75rem
+    --ma: 0.3125rem
+    --bo: 0.75rem
+    --br: 0.75rem
+
+  &[size="lg"]
+    font-size: 1.2rem
+    --pa: 0.75rem 1rem
+    --ma: 0.46875rem
+    --bo: 1.125rem
+    --br: 1rem
+
+  &[size="xl"]
+    font-size: 1.5rem
+    --pa: 1rem 1.25rem
+    --ma: 0.625rem
+    --bo: 1.5rem
+    --br: 1.2rem

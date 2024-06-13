@@ -3,38 +3,44 @@
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
-    "@biomejs/biome": "1.7.3",
+    "@biomejs/biome": "1.8.1",
     "@chromatic-com/storybook": "^1.5.0",
-    "@storybook/addon-a11y": "^8.1.5",
-    "@storybook/addon-essentials": "^8.1.5",
-    "@storybook/addon-interactions": "^8.1.5",
-    "@storybook/addon-links": "^8.1.5",
-    "@storybook/blocks": "^8.1.5",
-    "@storybook/html": "^8.1.5",
-    "@storybook/html-vite": "^8.1.5",
-    "@storybook/manager-api": "^8.1.5",
-    "@storybook/svelte": "^8.1.5",
-    "@storybook/svelte-vite": "^8.1.5",
-    "@storybook/test": "^8.1.5",
-    "@storybook/theming": "^8.1.5",
+    "@storybook/addon-a11y": "8.1.6",
+    "@storybook/addon-essentials": "8.1.6",
+    "@storybook/addon-interactions": "8.1.6",
+    "@storybook/addon-links": "8.1.6",
+    "@storybook/blocks": "8.1.6",
+    "@storybook/html": "8.1.6",
+    "@storybook/html-vite": "8.1.6",
+    "@storybook/manager-api": "8.1.6",
+    "@storybook/svelte": "8.1.6",
+    "@storybook/svelte-vite": "8.1.6",
+    "@storybook/test": "8.1.6",
+    "@storybook/theming": "8.1.6",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "@types/bun": "latest",
-    "browserslist": "^4.23.0",
-    "lefthook": "^1.6.14",
+    "browserslist": "^4.23.1",
+    "lefthook": "^1.6.15",
     "lightningcss": "^1.25.1",
     "ress": "^5.0.2",
     "sass": "^1.77.4",
-    "storybook": "^8.1.5",
-    "storybook-dark-mode": "^4.0.1"
+    "storybook": "8.1.6",
+    "storybook-dark-mode": "^4.0.1",
+    "svelte": "^4.2.18"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "biome": "biome check . --apply",
     "build": "build css",
-    "storybook": "storybook dev -p 6006 --no-open",
+    "storybook:dev": "storybook dev -p 6006 --no-open",
     "storybook:build": "storybook build -o .storybook-static"
   },
-  "trustedDependencies": ["@biomejs/biome", "esbuild", "lefthook", "svelte-preprocess"]
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "esbuild",
+    "lefthook",
+    "svelte-preprocess"
+  ]
 }

@@ -1,0 +1,49 @@
+div[role="progressbar"][aria-busy="true"]
+  display: block
+  width: var(--w, 2.5rem)
+  height: var(--h, 2.5rem)
+  border-radius: 50%
+  position: relative
+  pointer-events: none
+
+  &::before, &::after
+    content: ""
+    top: 0
+    left: 0
+    position: absolute
+    width: 100%
+    height: 100%
+    border: 3px solid transparent
+    border-radius: inherit
+
+  &::before
+    border-bottom: 3px dashed var(--cb)
+    animation: rotate .8s linear infinite
+    opacity: .4
+
+  &::after
+    border-bottom: 3px solid var(--cb)
+    animation: rotate .8s ease infinite
+
+  //small size
+  &[size="sm"]
+    --w: 1rem
+    --h: 1rem
+
+  &[size="md"]
+    --h: 1.5rem
+    --w: 1.5rem
+
+  &[size="lg"]
+    --w: 2.5rem
+    --h: 2.5rem
+
+  &[size="xl"]
+    --w: 3rem
+    --h: 3rem
+
+  @keyframes rotate
+    0%
+      transform: rotate(0deg)
+    100%
+      transform: rotate(360deg)

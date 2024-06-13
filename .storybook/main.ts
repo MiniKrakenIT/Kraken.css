@@ -5,6 +5,7 @@ const config: StorybookConfig = {
     '../stories/**/*.mdx',
     '../stories/**/*.stories.@(js|jsx|ts|tsx|svelte)',
   ],
+
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -13,9 +14,12 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     'storybook-dark-mode',
   ],
+
   framework: {
     name: '@storybook/svelte-vite',
     options: {},
   },
+
+  docs: {}
 }
 export default config
